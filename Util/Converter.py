@@ -41,9 +41,6 @@ def convert_csv_to_string_list(csv_files_path):
 
 # response = """
 # 년월,제품명,규격,요양기관기호,표준코드,구분,매출처명,사업자번호,우편번호,상세주소,수량,단가,금액
-# 202406,카르민주0.8%,10A,NaN,NaN,NaN,강릉아산병원,NaN,25440,NaN,5,NaN,NaN
-# 202406,도부란주,5ML/10A,NaN,NaN,NaN,성남중앙병원,NaN,13161,NaN,1,NaN,NaN
-# 202406,카르민주0.8%,10A,NaN,NaN,NaN,의료법인 미래의료재단,NaN,6169,NaN,1,NaN,NaN
 # """
 
 # print(convert_csv_to_xlsx(response, "./result/output1.xlsx"))
