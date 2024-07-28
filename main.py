@@ -20,6 +20,7 @@ Constraint
 5. Define numbers as Int values without decimal points. Everything else should be represented as String.
 6. Please enclose all field values in double quotes ("").
 7. Only write `csv string`
+8. Result reference file: ```csv{result_reference_string}```, Refer to the type of each column value
 
 Instructions
 1. Write the following header row in CSV format as the first row: `일자, 제품명, 규격, 요양기관기호, 표준코드, 구분, 매출처명, 사업자번호, 우편번호, 주소, 수량, 단가, 매출액`.
@@ -37,6 +38,7 @@ template = ChatPromptTemplate.from_messages([
 chain = template | chat 
 
 response = chain.invoke({
+    "result_reference_string": uconvert.convert_csv_to_string("./sample/output/output_1.csv"),
     "target_csv_string":uconvert.convert_csv_to_string("./target_input/result_original6.csv")
 })
 
