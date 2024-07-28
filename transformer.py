@@ -29,14 +29,13 @@ def convert_all_excels_in_folder(input_folder, output_folder):
         if os.path.isfile(file_path) and file_name.endswith(('.xls', '.xlsx')):
             convert_excel_to_csv(file_path, output_folder)
 
-# 사용 예시
-input_folder = './before'  # Excel 파일들이 있는 폴더
-output_folder = './after'  # CSV 파일을 저장할 폴더
+def export_csv():
+    input_folder = './before'  # Excel 파일들이 있는 폴더
+    output_folder = './after'  # CSV 파일을 저장할 폴더
 
-# 출력 폴더가 존재하지 않으면 생성
-if not os.path.exists(output_folder):
-    os.makedirs(output_folder)
+    if not os.path.exists(output_folder):
+        os.makedirs(output_folder)
 
-convert_all_excels_in_folder(input_folder, output_folder)
+    convert_all_excels_in_folder(input_folder, output_folder)
 
-
+# export_csv()

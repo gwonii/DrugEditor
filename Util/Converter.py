@@ -8,12 +8,12 @@ def convert_csv_to_string(csv_file_path):
         result = chardet.detect(f.read())
         encoding = result['encoding']
 
-    df = pd.read_csv(csv_file_path, encoding=encoding)
-    csv_string = df.to_string()
+    df = pd.read_csv(csv_file_path, encoding=encoding).drop_duplicates()
+    csv_string = df.to_csv(index=False)
     return csv_string
 
 def convert_csv_to_xlsx(content, output_path):
-    df = pd.read_csv(io.StringIO(content))
+    df = pd.read_csv(io.StringIO(content)).drop_duplicates()
     df.to_excel(output_path, index=False)
 
 def convert_csv_to_string_list(csv_files_path):
@@ -25,8 +25,8 @@ def convert_csv_to_string_list(csv_files_path):
             file_path = os.path.join(csv_files_path, filename)
             
             # CSV 파일 읽기
-            df = pd.read_csv(file_path)
-            
+            df = pd.read_csv(file_path).drop_duplicates()
+
             # DataFrame을 문자열로 변환
             csv_string = df.to_string()
             
